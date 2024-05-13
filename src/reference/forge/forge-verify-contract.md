@@ -15,19 +15,19 @@ Verifies a smart contract on a chosen verification provider.
 You must provide:
 - The contract address
 - The contract name or the path to the contract (read below)
-In case of Etherscan verification, you must also provide:
+In the case of Etherscan verification, you must also provide the following:
 - Your Etherscan API key, either by passing it as an argument or setting `ETHERSCAN_API_KEY`
 
 To find the exact compiler version, run `~/.svm/x.y.z/solc-x.y.z --version` and search for the 8 hex digits in the version string [here](https://etherscan.io/solcversions).
 
-The path to the contract is in the format `<path>:<contract>`, e.g. `src/Contract.sol:Contract`.
+The path to the contract is in the format `<path>:<contract>`, e.g. `src/Contract.sol: Contract`.
 
-By default, smart contracts are verified in a multi-file fashion. If you want to flatten the contract before verifying, pass `--flatten`.
+By default, smart contracts are verified in a multi-file fashion. Pass '- flatten ' if you want to flatten the contract before verifying.
 
 This command will try to compile the source code of the flattened contract if `--flatten` is passed before verifying. If you do not want that, pass `--force`.
 
 You can specify **ABI-encoded** constructor arguments with `--constructor-args`. Alternatively,
-you can specify a file containing **space-separated** constructor arguments with `--constructor-args-path`.
+specify a file containing **space-separated** constructor arguments with `--constructor-args-path`.
 (Note that [cache](../config/project.html#cache) must be enabled in the config for the latter to work.)
 
 ### OPTIONS
